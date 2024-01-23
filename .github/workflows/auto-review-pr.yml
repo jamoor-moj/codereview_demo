@@ -1,0 +1,25 @@
+name: Auto Request Review
+
+on:
+  pull_request:
+    types: [opened, ready_for_review, reopened, synchronize]
+
+jobs:
+  auto_request_review:
+    name: Auto Request Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github
+
+      - name: Print configuration file
+        run: cat ./.github/CODEREVIEWERS.yml
+
+      - name: Request reviewers
+        uses: necojackarc/auto-request-review@v0.12.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: ./.github/CODEREVIEWERS.yml
+          use_local: true
