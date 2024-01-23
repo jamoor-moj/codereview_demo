@@ -1,0 +1,10 @@
+files:
+  'include/client.h':
+    - jamoor-moj
+  'src/**':
+    - jamoor
+  'src/client.cpp':
+    - Warwolt
+options:
+  ignore_draft: true
+  last_files_match_only: true
