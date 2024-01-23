@@ -1,0 +1,10 @@
+files:
+  'include/client.h':
+    - jamoor-john-doe
+  'src/**':
+    - jamoor
+  'src/client.cpp':
+    - jamoor-test
+options:
+  ignore_draft: true
+  last_files_match_only: true
